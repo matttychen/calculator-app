@@ -2,7 +2,8 @@ export type ColorModeThemeData = {
   primary: {
     main: string;
     light: string;
-    dark: string;
+    medium: string;
+    unselected: string;
     highlight: string;
   };
   secondary: {

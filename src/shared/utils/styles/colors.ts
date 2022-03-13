@@ -1,5 +1,6 @@
 export const grayLight = '#F8F8F8';
 export const grayMedium = '#EAEAEA';
+export const grayDark = '#565656';
 
 export const blueLight = '#2A2D38';
 export const blueMedium = '#252932';

@@ -4,6 +4,7 @@ import {
   blueDark,
   blueLight,
   blueMedium,
+  grayDark,
   grayLight,
   grayMedium,
   orange,
@@ -14,7 +15,8 @@ export const lightModeTheme: ColorModeThemeData = {
   primary: {
     main: white,
     light: grayLight,
-    dark: grayMedium,
+    medium: grayMedium,
+    unselected: grayMedium,
     highlight: orange,
   },
   secondary: {
@@ -26,7 +28,8 @@ export const darkModeTheme: ColorModeThemeData = {
   primary: {
     main: blueDark,
     light: blueLight,
-    dark: blueMedium,
+    medium: blueMedium,
+    unselected: grayDark,
     highlight: orange,
   },
   secondary: {

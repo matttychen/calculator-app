@@ -75,9 +75,12 @@ const createWindow = async () => {
     height: 728,
     icon: getAssetPath('icon.png'),
     webPreferences: {
+      devTools: false,
       preload: path.join(__dirname, 'preload.js'),
     },
   });
+
+  mainWindow.setResizable(false);
 
   mainWindow.loadURL(resolveHtmlPath('index.html'));
 
@@ -133,3 +136,15 @@ app
     });
   })
   .catch(console.log);
+
+/*
+app.on('ready', () => {
+  // Register a shortcut listener for Ctrl + Shift + I
+  globalShortcut.register('Control+Shift+I', () => {
+    // When the user presses Ctrl + Shift + I, this function will get called
+    // You can modify this function to do other things, but if you just want
+    // to disable the shortcut, you can just return false
+    return false;
+  });
+});
+*/

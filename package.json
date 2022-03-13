@@ -168,6 +168,7 @@
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "@types/react-test-renderer": "^17.0.1",
+    "@types/styled-components": "^5.1.24",
     "@types/terser-webpack-plugin": "^5.0.4",
     "@types/webpack-env": "^1.16.3",
     "@typescript-eslint/eslint-plugin": "^5.8.1",
@@ -232,7 +233,8 @@
     "history": "^5.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-router-dom": "^6.2.1"
+    "react-router-dom": "^6.2.1",
+    "styled-components": "^5.3.3"
   },
   "devEngines": {
     "node": ">=14.x",

@@ -18,7 +18,7 @@ const SunIcon = () => (
       <g
         id="Light"
         transform="translate(-238.000000, -26.000000)"
-        fill="#22252E"
+        fill="#000000"
         fillRule="nonzero"
       >
         <g id="icons8-sun-copy" transform="translate(238.000000, 26.000000)">

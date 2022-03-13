@@ -7,6 +7,7 @@ const CalculationOutputContainer = styled.div`
   font-size: 48px;
   letter-spacing: 3px;
   line-height: 48px;
+  color: ${(props) => props.theme.secondary.main};
 `;
 
 const CalculationOutput = () => {

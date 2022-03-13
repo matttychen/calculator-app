@@ -1,5 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useState } from 'react';
+import onSelectColorTheme from 'shared/utils/functions';
+import { ColorModeOption } from 'shared/utils/types';
+import styled, { css, ThemeProvider } from 'styled-components';
 import CalculatorDisplay from '../calculator-display';
 import CalculatorKeyBoard from '../calculator-keyboard';
 import ThemeSelectorButton from '../theme-selector-button';
@@ -10,12 +12,16 @@ const CalculatorContainer = styled.div`
 `;
 
 const Calculator = () => {
+  const [colorTheme, setColorTheme] = useState<ColorModeOption>('light');
+
   return (
-    <CalculatorContainer>
-      <ThemeSelectorButton />
-      <CalculatorDisplay />
-      <CalculatorKeyBoard />
-    </CalculatorContainer>
+    <ThemeProvider theme={onSelectColorTheme(colorTheme)}>
+      <CalculatorContainer>
+        <ThemeSelectorButton />
+        <CalculatorDisplay />
+        <CalculatorKeyBoard />
+      </CalculatorContainer>
+    </ThemeProvider>
   );
 };
 

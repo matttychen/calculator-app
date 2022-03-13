@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import CalculatorDisplay from '../calculator-display';
 import CalculatorKeyBoard from '../calculator-keyboard';
 import ThemeSelectorButton from '../theme-selector-button';
 
@@ -12,6 +13,7 @@ const Calculator = () => {
   return (
     <CalculatorContainer>
       <ThemeSelectorButton />
+      <CalculatorDisplay />
       <CalculatorKeyBoard />
     </CalculatorContainer>
   );

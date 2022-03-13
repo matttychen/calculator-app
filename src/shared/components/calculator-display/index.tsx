@@ -8,6 +8,7 @@ const CalculatorDisplayContainer = styled.div`
   flex-flow: column nowrap;
   align-items: flex-end;
   justify-content: center;
+  row-gap: 14px;
   width: 100%;
 `;
 

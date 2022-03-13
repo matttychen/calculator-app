@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import onSelectColorTheme from 'shared/utils/functions';
 import { ColorModeOption } from 'shared/utils/types';
-import styled, { css, ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import CalculatorDisplay from '../calculator-display';
 import CalculatorKeyBoard from '../calculator-keyboard';
 import ThemeSelectorButton from '../theme-selector-button';
@@ -17,7 +17,10 @@ const Calculator = () => {
   return (
     <ThemeProvider theme={onSelectColorTheme(colorTheme)}>
       <CalculatorContainer>
-        <ThemeSelectorButton />
+        <ThemeSelectorButton
+          colorTheme={colorTheme}
+          setColorTheme={setColorTheme}
+        />
         <CalculatorDisplay />
         <CalculatorKeyBoard />
       </CalculatorContainer>

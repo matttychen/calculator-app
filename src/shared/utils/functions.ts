@@ -3,6 +3,7 @@ import * as math from 'mathjs';
 import {
   ACCEPTING_FIRST_INPUT,
   ACCEPTING_SECOND_INPUT,
+  CLEAR_TYPE,
   DISPLAY_OUTPUT,
   EQUALS_TYPE,
   NUMBER_TYPE,
@@ -347,7 +348,7 @@ export const onHandleSelectKeyboardButton = (
   setCalculatorState: Dispatch<SetStateAction<CalculatorState>>,
   setIsProcessingInput: Dispatch<SetStateAction<boolean>>
 ) => {
-  if (keyboardOption.type === 'clear') {
+  if (keyboardOption.type === CLEAR_TYPE) {
     onHandleClear(
       calculatorState,
       setCalculatorState,

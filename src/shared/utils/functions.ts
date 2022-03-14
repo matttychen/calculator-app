@@ -63,6 +63,10 @@ export const onCalculate = (
       result = math.multiply(firstInputNumber, secondInputNumber);
       break;
     case '/':
+      if (math.isZero(secondInputNumber)) {
+        setCalculatorResult('UNDEFINED');
+        return 'ERROR';
+      }
       result = math.divide(firstInputNumber, secondInputNumber);
       break;
     default:
@@ -281,12 +285,15 @@ export const onHandleDisplayOutput = (
   setIsProcessingInput: Dispatch<SetStateAction<boolean>>
 ) => {
   if (keyboardOption.type === NUMBER_TYPE) {
-    setFirstInput(keyboardOption.value);
+    if (keyboardOption.value === '.') setFirstInput('0.');
+    else setFirstInput(keyboardOption.value);
     setSecondInput('');
     setOperation('');
     setCalculatorResult('');
     setCalculatorState(ACCEPTING_FIRST_INPUT);
   }
+
+  if (calculatorResult === 'UNDEFINED') return;
 
   if (keyboardOption.type === OPERATOR_TYPE) {
     setFirstInput(calculatorResult);
@@ -360,6 +367,7 @@ export const onHandleSelectKeyboardButton = (
       setCalculatorResult
     );
   }
+
   if (calculatorState === ACCEPTING_FIRST_INPUT) {
     onHandleFirstInput(
       keyboardOption,

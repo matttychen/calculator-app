@@ -43,6 +43,10 @@ To run the unit tests:
 `npm run build:main` (main process for testing to run)
 `npm test`
 
+Developer tools is disabled for a better user experience and so if you are looking to enable it:
+
+Search `// DEVELOPER TOOLS:` in the codebase and follow the instructions
+
 # Future Improvements
 
 - Add more visual cues to show that the number is too large and the container has overflown

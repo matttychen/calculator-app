@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { white } from '../../../../../utils/styles/colors';
 
 const CalculationResultsContainer = styled.div`
   font-family: 'Karbon', 'Helvetica';
@@ -7,7 +8,7 @@ const CalculationResultsContainer = styled.div`
   letter-spacing: 3px;
   line-height: 48px;
   height: 48px;
-  color: ${(props) => props.theme.secondary.main};
+  color: ${(props) => props.theme?.secondary?.main ?? white};
   width: 100%;
   overflow: auto;
   text-align: right;

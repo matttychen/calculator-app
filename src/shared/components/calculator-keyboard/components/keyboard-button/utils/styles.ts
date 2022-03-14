@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { grayMedium, white } from '../../../../../utils/styles/colors';
 
 interface KeyboardButtonContainerProps {
   isZeroKey?: boolean;
@@ -14,7 +15,7 @@ const KeyboardButtonContainer = styled.div<KeyboardButtonContainerProps>`
   height: 50px;
   padding: 5px 0 0 0;
 
-  background-color: ${(props) => props.theme.primary.medium}};
+  background-color: ${(props) => props.theme?.primary?.medium ?? grayMedium}};
   border-radius: 8px;
   box-sizing: border-box;
   
@@ -23,7 +24,7 @@ const KeyboardButtonContainer = styled.div<KeyboardButtonContainerProps>`
   font-weight: 600;
   line-height: 24px;
   letter-spacing: 1.5px;
-  color: ${(props) => props.theme.secondary.main};
+  color: ${(props) => props.theme?.secondary?.main ?? white};
   user-select: none;
 
   ${(props) => {
@@ -43,7 +44,7 @@ const KeyboardButtonContainer = styled.div<KeyboardButtonContainerProps>`
       return css`
         padding: 0px;
         & > svg > g > g {
-          stroke: ${props.theme.secondary.main} !important;
+          stroke: ${props.theme?.secondary?.main ?? white} !important;
         }
       `;
     }

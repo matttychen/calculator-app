@@ -1,4 +1,7 @@
-import { OPERATOR_TYPE, SPECIAL_OPERATOR_TYPE } from 'shared/utils/constants';
+import {
+  OPERATOR_TYPE,
+  SPECIAL_OPERATOR_TYPE,
+} from '../../../../utils/constants';
 import { KeyboardOption } from '../../../../utils/types';
 import KeyboardButtonContents from '../keyboard-button-contents';
 import KeyboardButtonContainer from './utils/styles';

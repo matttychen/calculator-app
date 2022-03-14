@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { grayLight } from '../../../utils/styles/colors';
 
 export const BackgroundWrapper = styled.div`
   display: flex;
@@ -8,7 +9,7 @@ export const BackgroundWrapper = styled.div`
   width: 100%;
   height: 390px;
 
-  background-color: ${(props) => props.theme.primary.light};
+  background-color: ${(props) => props.theme?.primary?.light ?? grayLight};
   border-radius: 40px 40px 0 0;
 `;
 

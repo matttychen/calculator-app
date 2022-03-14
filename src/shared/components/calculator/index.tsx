@@ -14,11 +14,12 @@ import { ACCEPTING_FIRST_INPUT, LIGHT_THEME } from '../../utils/constants';
 import CalculatorDisplay from '../calculator-display';
 import CalculatorKeyBoard from '../calculator-keyboard';
 import ThemeSelectorButton from '../theme-selector-button';
+import { white } from '../../utils/styles/colors';
 
 const CalculatorContainer = styled.div`
   width: 100%;
   height: 100%;
-  background-color: ${(props) => props.theme.primary.main};
+  background-color: ${(props) => props.theme?.primary?.main ?? white};
 `;
 
 const Calculator = () => {

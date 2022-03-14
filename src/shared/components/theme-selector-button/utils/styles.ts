@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { grayLight, grayMedium, white } from '../../../utils/styles/colors';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -20,7 +21,7 @@ export const ThemeSelectorButtonContainer = styled.div`
   height: 30px;
 
   border-radius: 10px;
-  background-color: ${(props) => props.theme.primary.light};
+  background-color: ${(props) => props.theme?.primary?.light ?? grayLight};
 `;
 
 interface IconContainerProps {
@@ -38,14 +39,14 @@ export const IconContainer = styled.div<IconContainerProps>`
       if (props.icon === 'sun-icon') {
         return css`
           & > svg > g > g {
-            fill: ${props.theme.secondary.main} !important;
+            fill: ${props.theme?.secondary?.main ?? white} !important;
           }
         `;
       }
 
       return css`
         & > svg > g > g {
-          stroke: ${props.theme.secondary.main} !important;
+          stroke: ${props.theme?.secondary?.main ?? white} !important;
         }
       `;
     }
@@ -54,7 +55,7 @@ export const IconContainer = styled.div<IconContainerProps>`
     if (props.icon === 'sun-icon') {
       return css`
         & > svg > g > g {
-          fill: ${props.theme.primary.unselected} !important;
+          fill: ${props.theme?.primary?.unselected ?? grayMedium} !important;
         }
 
         &:hover {
@@ -66,7 +67,7 @@ export const IconContainer = styled.div<IconContainerProps>`
 
     return css`
       & > svg > g > g {
-        stroke: ${props.theme.primary.unselected} !important;
+        stroke: ${props.theme?.primary?.unselected ?? grayMedium} !important;
       }
 
       &:hover {

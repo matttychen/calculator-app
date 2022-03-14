@@ -65,7 +65,7 @@ export const onCalculate = (
     case '/':
       if (math.isZero(secondInputNumber)) {
         setCalculatorResult('UNDEFINED');
-        return 'ERROR';
+        return 'UNDEFINED';
       }
       result = math.divide(firstInputNumber, secondInputNumber);
       break;

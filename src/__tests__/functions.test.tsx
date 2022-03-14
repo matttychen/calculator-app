@@ -34,6 +34,10 @@ describe('onCalculate', () => {
   it('dividing two decimals', () => {
     expect(onCalculate(() => {}, '2.4', '0.8', '/')).toEqual('3');
   });
+
+  it('dividing by zero', () => {
+    expect(onCalculate(() => {}, '2', '0', '/')).toEqual('UNDEFINED');
+  });
 });
 
 describe('onHandleSpecialOperatorCalculations', () => {

@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import CalculationInput from './components/calculation-input';
 import CalculationOutput from './components/calculation-output';
@@ -12,15 +11,39 @@ const CalculatorDisplayContainer = styled.div`
 
   width: 100%;
   height: calc(100vh - (390px + 50px));
-  padding: 0 30px 20px 0;
+  padding: 0 30px 20px 30px;
   box-sizing: border-box;
 `;
 
-const CalculatorDisplay = () => {
+interface Props {
+  calculatorState: string;
+  firstInput: string;
+  operation: string;
+  secondInput: string;
+  calculatorResult: string;
+}
+
+const CalculatorDisplay = ({
+  calculatorState,
+  firstInput,
+  operation,
+  secondInput,
+  calculatorResult,
+}: Props) => {
   return (
     <CalculatorDisplayContainer>
-      <CalculationInput />
-      <CalculationOutput />
+      <CalculationInput
+        calculatorState={calculatorState}
+        firstInput={firstInput}
+        operation={operation}
+        secondInput={secondInput}
+      />
+      <CalculationOutput
+        calculatorState={calculatorState}
+        firstInput={firstInput}
+        secondInput={secondInput}
+        calculatorResult={calculatorResult}
+      />
     </CalculatorDisplayContainer>
   );
 };

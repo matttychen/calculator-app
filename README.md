@@ -11,7 +11,8 @@ The app uses the following technologies:
 - Jest for unit testing
 # My Approach
 
-The total time this app took me would be roughly ~4-5 hours that I spread out throughout the day on Sunday, March 13th.
+The total time this app took me would be roughly ~4-5 hours spread out throughout my day on Sunday, March 13th and I wrapped
+it up on the morning of monday, March 14th cleaning up the code.
 
 I first took the time to design how I wanted the calculator application to look like using an application called Sketch.
 

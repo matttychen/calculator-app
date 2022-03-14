@@ -10,7 +10,7 @@ import {
   onHandleSelectKeyboardButton,
   onSelectColorMode,
 } from '../../utils/functions';
-import { ACCEPTING_FIRST_INPUT } from '../../utils/constants';
+import { ACCEPTING_FIRST_INPUT, LIGHT_THEME } from '../../utils/constants';
 import CalculatorDisplay from '../calculator-display';
 import CalculatorKeyBoard from '../calculator-keyboard';
 import ThemeSelectorButton from '../theme-selector-button';
@@ -22,7 +22,7 @@ const CalculatorContainer = styled.div`
 `;
 
 const Calculator = () => {
-  const [colorTheme, setColorTheme] = useState<ColorModeOption>('light');
+  const [colorTheme, setColorTheme] = useState<ColorModeOption>(LIGHT_THEME);
   const [calculatorState, setCalculatorState] = useState<CalculatorState>(
     ACCEPTING_FIRST_INPUT
   );
@@ -34,7 +34,7 @@ const Calculator = () => {
   const [calculatorResult, setCalculatorResult] = useState<string>('');
 
   useEffect(() => {
-    setIsProcessingInput(firstInput !== '0' || secondInput !== '');
+    setIsProcessingInput(firstInput !== '0' || secondInput.length !== 0);
   }, [firstInput, secondInput]);
 
   const onClickSelectKeyboardButton = (keyboardOption: KeyboardOption) => {

@@ -1,27 +1,9 @@
 import { useEffect, useRef } from 'react';
-import styled from 'styled-components';
 import {
   ACCEPTING_FIRST_INPUT,
   ACCEPTING_SECOND_INPUT,
-  DISPLAY_OUTPUT,
 } from '../../../../utils/constants';
-
-const CalculationOutputContainer = styled.div`
-  font-family: 'Karbon', 'Helvetica';
-  font-weight: 700;
-  font-size: 48px;
-  letter-spacing: 3px;
-  line-height: 48px;
-  height: 48px;
-  color: ${(props) => props.theme.secondary.main};
-  width: 100%;
-  overflow: auto;
-  text-align: right;
-
-  &:hover {
-    cursor: default;
-  }
-`;
+import CalculationOutputContainer from './utils/styles';
 
 interface Props {
   calculatorState: string;
@@ -45,30 +27,22 @@ const CalculationOutput = ({
     inputRef.current.scrollLeft = scrollWidth;
   }, [firstInput, secondInput, calculatorResult]);
 
-  if (calculatorState === ACCEPTING_FIRST_INPUT) {
-    return (
-      <CalculationOutputContainer ref={inputRef}>
-        {firstInput}
-      </CalculationOutputContainer>
-    );
-  }
-  if (calculatorState === ACCEPTING_SECOND_INPUT) {
-    return (
-      <CalculationOutputContainer ref={inputRef}>
-        {secondInput}
-      </CalculationOutputContainer>
-    );
-  }
+  const renderOutputContent = () => {
+    if (calculatorState === ACCEPTING_FIRST_INPUT) {
+      return firstInput;
+    }
+    if (calculatorState === ACCEPTING_SECOND_INPUT) {
+      return secondInput;
+    }
 
-  if (calculatorState === DISPLAY_OUTPUT) {
-    return (
-      <CalculationOutputContainer ref={inputRef}>
-        {calculatorResult}
-      </CalculationOutputContainer>
-    );
-  }
+    return calculatorResult;
+  };
 
-  return null;
+  return (
+    <CalculationOutputContainer ref={inputRef}>
+      {renderOutputContent()}
+    </CalculationOutputContainer>
+  );
 };
 
 export default CalculationOutput;

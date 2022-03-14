@@ -1,29 +1,9 @@
 import { useEffect, useRef } from 'react';
-import styled from 'styled-components';
 import {
   ACCEPTING_FIRST_INPUT,
   ACCEPTING_SECOND_INPUT,
 } from '../../../../utils/constants';
-
-const CalculationInputContainer = styled.div`
-  font-family: 'Karbon', 'Helvetica';
-  font-weight: 600;
-  font-size: 24px;
-  letter-spacing: 1.5px;
-  line-height: 24px;
-  color: ${(props) => props.theme.primary.dark};
-
-  width: 100%;
-  max-height: 24px;
-  text-align: right;
-  white-space: nowrap;
-  overflow-x: scroll;
-  scrollbar-width: thin;
-
-  &:hover {
-    cursor: default;
-  }
-`;
+import CalculationInputContainer from './utils/styles';
 
 interface Props {
   calculatorState: string;
@@ -38,8 +18,9 @@ const CalculationInput = ({
   operation,
   secondInput,
 }: Props) => {
-  const inputRef = useRef<any>(null);
   let expression = `${firstInput} ${operation} ${secondInput}`;
+
+  const inputRef = useRef<any>(null);
 
   useEffect(() => {
     if (inputRef.current === null) return;

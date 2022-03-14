@@ -29,6 +29,8 @@ the ECMAScript standard that defines the JS language which causes inaccurate cal
 
 # Instructions to run and test
 
+(if you don't have node or npm) follow the instructions here to install: https://treehouse.github.io/installation-guides/mac/node-mac.html
+
 First install dependencies: 
 
 `npm i`
@@ -40,7 +42,9 @@ Then run the following command to get the app started:
 To run the unit tests:
 
 `npm run build:renderer` (renderer process for testing to run)
+
 `npm run build:main` (main process for testing to run)
+
 `npm test`
 
 Developer tools is disabled for a better user experience and so if you are looking to enable it:

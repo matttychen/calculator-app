@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const CalculationOutputContainer = styled.div`
+const CalculationResultsContainer = styled.div`
   font-family: 'Karbon', 'Helvetica';
   font-weight: 700;
   font-size: 48px;
@@ -17,4 +17,4 @@ const CalculationOutputContainer = styled.div`
   }
 `;
 
-export default CalculationOutputContainer;
+export default CalculationResultsContainer;

@@ -3,7 +3,7 @@ import {
   ACCEPTING_FIRST_INPUT,
   ACCEPTING_SECOND_INPUT,
 } from '../../../../utils/constants';
-import CalculationInputContainer from './utils/styles';
+import CalculationExpressionContainer from './utils/styles';
 
 interface Props {
   calculatorState: string;
@@ -12,7 +12,7 @@ interface Props {
   secondInput: string;
 }
 
-const CalculationInput = ({
+const CalculationExpression = ({
   calculatorState,
   firstInput,
   operation,
@@ -36,10 +36,10 @@ const CalculationInput = ({
   }
 
   return (
-    <CalculationInputContainer ref={inputRef}>
+    <CalculationExpressionContainer ref={inputRef}>
       {expression}
-    </CalculationInputContainer>
+    </CalculationExpressionContainer>
   );
 };
 
-export default CalculationInput;
+export default CalculationExpression;

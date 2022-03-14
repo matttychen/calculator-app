@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const CalculationInputContainer = styled.div`
+const CalculationExpressionContainer = styled.div`
   font-family: 'Karbon', 'Helvetica';
   font-weight: 600;
   font-size: 24px;
@@ -20,4 +20,4 @@ const CalculationInputContainer = styled.div`
   }
 `;
 
-export default CalculationInputContainer;
+export default CalculationExpressionContainer;

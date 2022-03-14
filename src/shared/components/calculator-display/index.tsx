@@ -1,5 +1,5 @@
-import CalculationInput from './components/calculation-input';
-import CalculationOutput from './components/calculation-output';
+import CalculationExpression from './components/calculation-expression';
+import CalculationResults from './components/calculation-results';
 import CalculatorDisplayContainer from './utils/styles';
 
 interface Props {
@@ -19,13 +19,13 @@ const CalculatorDisplay = ({
 }: Props) => {
   return (
     <CalculatorDisplayContainer>
-      <CalculationInput
+      <CalculationExpression
         calculatorState={calculatorState}
         firstInput={firstInput}
         operation={operation}
         secondInput={secondInput}
       />
-      <CalculationOutput
+      <CalculationResults
         calculatorState={calculatorState}
         firstInput={firstInput}
         secondInput={secondInput}

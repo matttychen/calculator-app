@@ -1,5 +1,5 @@
-import Calculator from 'shared/components/calculator';
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
+import Calculator from '../shared/components/calculator';
 import './App.css';
 import GlobalStyleFonts from '../shared/utils/fonts';
 

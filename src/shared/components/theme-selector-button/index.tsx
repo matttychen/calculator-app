@@ -1,8 +1,8 @@
-import React, { Dispatch, SetStateAction } from 'react';
-import MoonIcon from 'shared/icons/moon-icon';
-import SunIcon from 'shared/icons/sun-icon';
-import { ColorModeOption } from 'shared/utils/types';
+import { Dispatch, SetStateAction } from 'react';
 import styled, { css } from 'styled-components';
+import MoonIcon from '../../icons/moon-icon';
+import SunIcon from '../../icons/sun-icon';
+import { ColorModeOption } from '../../utils/types';
 
 const ScreenWrapper = styled.div`
   display: flex;

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const MoonIcon = () => (
   <svg
     width="16px"

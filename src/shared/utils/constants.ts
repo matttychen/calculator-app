@@ -110,3 +110,7 @@ export const OPERATOR_TYPE = 'operator';
 export const SPECIAL_OPERATOR_TYPE = 'special-operator';
 export const CLEAR_TYPE = 'clear';
 export const EQUALS_TYPE = 'equals';
+
+// COLOR THEMES
+export const LIGHT_THEME = 'light';
+export const DARK_THEME = 'dark';

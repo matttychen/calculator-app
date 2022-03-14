@@ -1,83 +1,13 @@
 import { Dispatch, SetStateAction } from 'react';
-import styled, { css } from 'styled-components';
+import { DARK_THEME, LIGHT_THEME } from '../../utils/constants';
 import MoonIcon from '../../icons/moon-icon';
 import SunIcon from '../../icons/sun-icon';
 import { ColorModeOption } from '../../utils/types';
-
-const ScreenWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 100%;
-  padding: 20px 0 0 0;
-`;
-
-const ThemeSelectorButtonContainer = styled.div`
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: center;
-  column-gap: 16px;
-
-  width: 72px;
-  height: 30px;
-
-  border-radius: 10px;
-  background-color: ${(props) => props.theme.primary.light};
-`;
-
-interface IconContainerProps {
-  icon: string;
-  selected: boolean;
-}
-
-const IconContainer = styled.div<IconContainerProps>`
-  width: 18px;
-  height: 18px;
-
-  ${(props) => {
-    if (props.selected) {
-      if (props.icon === 'sun-icon') {
-        return css`
-          & > svg > g > g {
-            fill: ${props.theme.secondary.main} !important;
-          }
-        `;
-      }
-
-      return css`
-        & > svg > g > g {
-          stroke: ${props.theme.secondary.main} !important;
-        }
-      `;
-    }
-
-    if (props.icon === 'sun-icon') {
-      return css`
-        & > svg > g > g {
-          fill: ${props.theme.primary.unselected} !important;
-        }
-
-        &:hover {
-          cursor: pointer;
-          filter: brightness(0.8);
-        }
-      `;
-    }
-
-    return css`
-      & > svg > g > g {
-        stroke: ${props.theme.primary.unselected} !important;
-      }
-
-      &:hover {
-        cursor: pointer;
-        filter: brightness(0.8);
-      }
-    `;
-  }}
-`;
+import {
+  IconContainer,
+  ThemeSelectorButtonContainer,
+  Wrapper,
+} from './utils/styles';
 
 interface Props {
   colorTheme: ColorModeOption;
@@ -90,24 +20,24 @@ const ThemeSelectorButton = ({ colorTheme, setColorTheme }: Props) => {
   };
 
   return (
-    <ScreenWrapper>
+    <Wrapper>
       <ThemeSelectorButtonContainer>
         <IconContainer
           icon="sun-icon"
-          selected={colorTheme === 'light'}
-          onClick={() => onClickSelectColorTheme('light')}
+          selected={colorTheme === LIGHT_THEME}
+          onClick={() => onClickSelectColorTheme(LIGHT_THEME)}
         >
           <SunIcon />
         </IconContainer>
         <IconContainer
           icon="moon-icon"
-          selected={colorTheme === 'dark'}
-          onClick={() => onClickSelectColorTheme('dark')}
+          selected={colorTheme === DARK_THEME}
+          onClick={() => onClickSelectColorTheme(DARK_THEME)}
         >
           <MoonIcon />
         </IconContainer>
       </ThemeSelectorButtonContainer>
-    </ScreenWrapper>
+    </Wrapper>
   );
 };
 

@@ -47,6 +47,7 @@ npm test
 
 - Add more visual cues to show that the number is too large and the container has overflown
 - Add keyboard option to store memory
+- Add more functionality to the calculator (features of scientific calculator)
 - Make the dimensions of the calculator more flexible
 - Improve default eslint config code styling
 - Add end-to-end integration tests
